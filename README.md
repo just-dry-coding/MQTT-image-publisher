@@ -4,3 +4,6 @@ The Android MQTT Image Publisher app allows users to connect to an MQTT broker, 
 ## Setup
 1. Install Android Studio (tested version 2022.2.1)
 2. Build and run the android app either in emulator or on your android device
+
+## Improvements
+- add tests

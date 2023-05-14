@@ -80,6 +80,7 @@ class CameraActivity : AppCompatActivity() {
                 if (bitmap != null) {
                     imageBitmap = bitmap
                     imageView.setImageBitmap(imageBitmap)
+                    publishButton.isEnabled = true // todo: also check its connected
                 }
             } else {
                 // todo: Handle the canceled or failed result
@@ -142,6 +143,7 @@ class CameraActivity : AppCompatActivity() {
             message.isRetained = false
             mqttClient.publish(topic, message, null, object : IMqttActionListener {
                 override fun onSuccess(asyncActionToken: IMqttToken?) {
+                    publishButton.isEnabled = false
                     logAndPrint("Published to $topic")
                 }
 
